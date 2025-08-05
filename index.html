@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LI Branding - Newsletter Creation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(37, 117, 252, 0.3);
+    margin-bottom: 60px;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+  .btn-primary {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    padding: 16px 48px;
+    font-size: 1.25rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 111, 97, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #ff4835;
+    box-shadow: 0 8px 20px rgba(255, 72, 53, 0.7);
+  }
+
+  /* Section Headings */
+  h2.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2575fc;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  /* Services Section */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+  }
+  .service-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .service-card h3 {
+    color: #6a11cb;
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    color: #555;
+    font-size: 1rem;
+  }
+
+  /* Why Newsletters Matter Section */
+  .why-newsletters {
+    background: #e7f0ff;
+    border-left: 6px solid #2575fc;
+    padding: 40px 30px;
+    margin-bottom: 80px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .why-newsletters h3 {
+    color: #2575fc;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .why-newsletters p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Newsletter Samples */
+  .samples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+  .sample-card {
+    background: white;
+    width: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .sample-card:hover {
+    transform: scale(1.05);
+  }
+  .sample-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .sample-content {
+    padding: 20px;
+  }
+  .sample-content h3 {
+    margin: 0 0 10px;
+    color: #2575fc;
+  }
+  .sample-content p {
+    color: #444;
+    font-size: 0.95rem;
+  }
+
+  /* About Section */
+  .about {
+    background: linear-gradient(135deg, #fff7e6 0%, #ffe1d6 100%);
+    padding: 60px 40px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: #5a4d4d;
+  }
+  .about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+  }
+
+  /* Contact Section */
+  .contact {
+    background: #2575fc;
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .contact p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  .contact a {
+    color: #ff6f61;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* Contact Form */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 16px 0;
+    background: #ff6f61;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255, 111, 97, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background-color: #ff4835;
+    box-shadow: 0 8px 20px rgba(255, 72, 53, 0.7);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+    }
+    .samples {
+      justify-content: center;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Welcome to LI Branding</h1>
+      <p>We create newsletters that feel personal — crafted to connect with your community and grow your business naturally.</p>
+      <button class="btn-primary">Request a Free Sample</button>
+    </section>
+
+    <section>
+      <h2 class="section-title">Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Branded Newsletters</h3>
+          <p>Custom newsletters designed to reflect who you are and what makes your business unique.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tailored Content</h3>
+          <p>Content that speaks directly to your audience’s interests and needs — no fluff, just value.</p>
+        </div>
+        <div class="service-card">
+          <h3>Multi-Format Delivery</h3>
+          <p>Ready-to-send emails and easy-to-print PDFs, so you can reach your clients however they prefer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-newsletters">
+      <h3>Why Newsletters Matter</h3>
+      <p>Marketing isn’t just about selling — it’s about building relationships. Newsletters let you stay in touch with your clients, share useful info, and remind them why they love your business.</p>
+      <p>When you connect regularly, you build trust and loyalty — which means more return customers, referrals, and growth. A good newsletter feels like a conversation, not a sales pitch.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Newsletter Samples</h2>
+      <div class="samples">
+        <div class="sample-card" tabindex="0" aria-label="Retail Business Newsletter Sample">
+          <div class="sample-image" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="sample-content">
+            <h3>Retail Business</h3>
+            <p>Monthly updates and thoughtful promos to keep customers coming back.</p>
+          </div>
+        </div>
+        <div class="sample-card" tabindex="0" aria-label="Local Accountant Newsletter Sample">
+          <div class="sample-image" style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="sample-content">
+            <h3>Local Accountant</h3>
+            <p>Helpful tax tips and industry news delivered with clarity and care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2 class="section-title" style="color:#6a11cb;">About LI Branding</h2>
+      <p>We’re passionate about helping small businesses connect with their communities through thoughtful, personal newsletters. Our goal is to make your message feel real, authentic, and valued.</p>
+    </section>
+
+    <section class="contact">
+      <h2 class="section-title" style="color:#fff;">Get in Touch</h2>
+      <p>Have questions? Want to see what we can do for your business? Email us at <a href="mailto:hello@libranding.com">hello@libranding.com</a> or use the form below to say hello.</p>
+
+      <form action="https://formspree.io/f/yourformid" method="POST" novalidate>
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+
+        <input type="hidden" name="_subject" value="New message from LI Branding website" />
+        <input type="submit" value="Send Message" />
+      </form>
+
+    </section>
+
+  </div>
+
+</body>
+</html>
